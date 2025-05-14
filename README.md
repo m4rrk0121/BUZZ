@@ -1,87 +1,72 @@
-# MultiTokenLock Smart Contract
+# BUZZ NFT Minting Application
 
-A contract for locking different ERC20 tokens for specified durations. Users can lock any ERC20 token and withdraw them after the lock period expires.
+BUZZ is a modern web3 application for minting NFTs on the Base network. The platform offers a seamless experience for users to connect their wallets and mint exclusive NFTs.
 
 ## Features
 
-- Lock multiple ERC20 tokens
-- Set custom lock durations
-- Extend lock periods
-- View lock information
-- Emergency withdrawal functionality for contract owner
+- **Wallet Connectivity**: Connect easily using MetaMask or other Web3 wallets
+- **NFT Minting**: Mint up to 10 NFTs per transaction
+- **User-Friendly Interface**: Intuitive UI designed for both beginner and experienced users
+- **Jungle-Themed Design**: Immersive visual experience with custom graphics
 
-## Prerequisites
+## Technology Stack
+
+- **Frontend**: React.js
+- **Web3 Integration**: Wagmi and @reown/appkit
+- **Styling**: Custom CSS
+- **Blockchain**: Base Network
+
+## Getting Started
+
+### Prerequisites
 
 - Node.js >= 16.0.0
 - npm or yarn
+- MetaMask or another Web3 wallet
 
-## Installation
+### Installation
 
 1. Clone the repository
-2. Install dependencies:
+```bash
+git clone https://github.com/m4rrk0121/BUZZ.git
+cd BUZZ
+```
 
+2. Install dependencies
 ```bash
 npm install
 ```
 
 3. Configure environment variables:
-   - Create a `.env` file in the root directory
-   - Add your private key for deployment:
-   ```
-   PRIVATE_KEY=your_private_key_here
-   BASESCAN_API_KEY=your_basescan_api_key_here
-   
-   # Optional: Custom RPC URLs
-   # BASE_MAINNET_URL=https://mainnet.base.org
-   # BASE_TESTNET_URL=https://goerli.base.org
-   ```
+   - Create a `.env` file in the root directory based on `.env.template`
 
-## Compiling the Contract
-
+4. Start the development server
 ```bash
-npx hardhat compile
+npm start
 ```
 
-## Deploying the Contract
-
-### Deploy to Base Testnet (Goerli)
-
-```bash
-npx hardhat run scripts/deploy.js --network baseGoerli
-```
-
-### Deploy to Base Mainnet
-
-```bash
-npx hardhat run scripts/deploy.js --network base
-```
-
-## Verifying the Contract
-
-After deployment, verify your contract on Basescan:
-
-```bash
-npx hardhat verify --network base CONTRACT_ADDRESS
-```
-
-Replace `CONTRACT_ADDRESS` with the address of your deployed contract.
+The application will be available at http://localhost:3000.
 
 ## Usage
 
-The contract includes the following main functions:
+1. **Connect Wallet**: Click the "Connect Wallet" button in the navigation bar
+2. **Navigate to NFT Mint Tab**: Go to the NFT Mint section
+3. **Select Quantity**: Choose the number of NFTs you wish to mint (1-10)
+4. **Complete Transaction**: Confirm the transaction in your wallet
 
-- `lockTokens`: Lock ERC20 tokens for a specified duration
-- `withdrawTokens`: Withdraw tokens after the lock period expires
-- `extendLock`: Extend the lock period for an existing lock
-- `getUserLocks`: View all locks for a specific user
-- `getLockById`: Get details of a specific lock
+## Environment Configuration
 
-## Security
+The application uses environment variables for configuration. See `.env.template` for available options.
 
-- The contract uses OpenZeppelin's standard libraries
-- ReentrancyGuard to prevent reentrancy attacks
-- Ownable2Step for secure ownership management
-- SafeERC20 for secure token transfers
+## Deployment
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The build artifacts will be stored in the `build/` directory.
 
 ## License
 
