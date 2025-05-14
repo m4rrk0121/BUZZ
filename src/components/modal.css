@@ -1,0 +1,1190 @@
+/* Enhanced Form Input Styles */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: 2px solid #ffb300;
+  background-color: #121212;
+  color: #ffb300;
+  font-family: 'Chewy', cursive;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative; /* Ensure inputs are above backgrounds */
+  z-index: 1;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #ffdd5c;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 179, 0, 0.3);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 179, 0, 0.5);
+}
+
+/* Custom checkbox styling */
+.form-group input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  color: #ffb300;
+  margin-bottom: 15px;
+  z-index: 1; /* Ensure checkboxes are above background */
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #121212;
+  border: 2px solid #ffb300;
+  border-radius: 4px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #1a1a1a;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #ffb300;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* Gas price input container */
+.gas-options {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: rgba(255, 179, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.current-gas {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #ffb300;
+  font-weight: bold;
+}
+
+/* Deploy button enhancement */
+.deploy-button {
+  background: linear-gradient(to bottom, #ffcc33, #ffb300);
+  color: #000000;
+  font-family: 'Chewy', cursive;
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.deploy-button:hover {
+  background: linear-gradient(to bottom, #ffdd5c, #ffcc33);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.deploy-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.deploy-button:disabled {
+  background: linear-gradient(to bottom, #7a7a7a, #5a5a5a);
+  color: #adadad;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Show the real checkbox for react to work with it but visually hidden */
+.checkbox-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  z-index: 2;
+}
+
+/* Form section heading */
+.form-section-heading {
+  color: #ffb300;
+  font-size: 1.3rem;
+  margin: 25px 0 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 179, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* Deployment details enhancement */
+.deployment-details {
+  background-color: rgba(255, 179, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.deployment-details h4 {
+  color: #ffb300;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 179, 0, 0.3);
+  padding-bottom: 8px;
+}
+
+.deployment-details p {
+  margin: 10px 0;
+  color: #ffb300;
+  font-size: 1rem;
+}
+
+/* Add info icon to help texts */
+.form-group small {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 179, 0, 0.7);
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.form-group small:before {
+  content: "ℹ️";
+  margin-right: 5px;
+  font-size: 1rem;
+}
+
+/* Container for token forms */
+.token-form-section {
+  background-color: rgba(255, 179, 0, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.token-data-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.token-data-row .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Contract interaction container */
+.contract-interaction {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  z-index: 1; /* Ensure content is above bananas */
+}
+
+/* Contract form container */
+.contract-form-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Connect prompt */
+.connect-prompt {
+  position: relative;
+  z-index: 1;
+}
+
+/* Wallet connection */
+.wallet-connection {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== MODAL STYLES BELOW ===== */
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001; /* Higher z-index to be above everything */
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #121212;
+  border: 3px solid #ffb300;
+  border-radius: 10px;
+  padding: 25px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease-out;
+  z-index: 1002; /* Even higher z-index */
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Modal header */
+.modal-content h3 {
+  color: #ffb300;
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 179, 0, 0.3);
+  font-size: 1.8rem;
+}
+
+/* Modal close button */
+.close-modal-button {
+  background-color: #333;
+  color: #ffb300;
+  border: 1px solid #ffb300;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Chewy', cursive;
+  font-size: 1rem;
+  margin-top: 15px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.close-modal-button:hover {
+  background-color: #444;
+}
+
+/* Execute button with styles matching deploy button */
+.execute-button {
+  background: linear-gradient(to bottom, #ffcc33, #ffb300);
+  color: #000000;
+  font-family: 'Chewy', cursive;
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.execute-button:hover {
+  background: linear-gradient(to bottom, #ffdd5c, #ffcc33);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.execute-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.execute-button:disabled {
+  background: linear-gradient(to bottom, #7a7a7a, #5a5a5a);
+  color: #adadad;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Transaction hash display */
+.tx-hash {
+  background-color: #333;
+  color: #ffb300;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0;
+  word-break: break-all;
+  position: relative;
+  z-index: 1;
+}
+
+.pending-indicator {
+  margin-top: 10px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Success message */
+.success-message {
+  background-color: rgba(0, 255, 0, 0.1);
+  color: #00ff88;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0;
+  border: 1px solid #00ff88;
+  position: relative;
+  z-index: 1;
+}
+
+.success-message h4 {
+  margin-top: 0;
+  color: #00ff88;
+}
+
+.tx-details {
+  margin-top: 10px;
+  color: #ffb300;
+}
+
+.tx-details p {
+  margin: 5px 0;
+  word-break: break-all;
+}
+
+/* Error message */
+.error-message {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: #ff6666;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0;
+  border: 1px solid #ff6666;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fee Results Modal Styles */
+.fee-results {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: rgba(255, 179, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.fee-results h4 {
+  color: #ffb300;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 179, 0, 0.3);
+  padding-bottom: 8px;
+}
+
+.fee-results p {
+  margin: 10px 0;
+  color: #ffb300;
+  font-size: 1rem;
+}
+
+.fee-results strong {
+  color: rgba(255, 255, 255, 0.9);
+  margin-right: 10px;
+}
+
+/* Token Collection Display */
+.token-collection {
+  margin-top: 15px;
+  background-color: rgba(0, 255, 0, 0.05);
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.token-amount {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.token-amount:last-child {
+  border-bottom: none;
+}
+
+.token-amount span:first-child {
+  font-weight: bold;
+}
+
+/* Shill text modal */
+.shill-modal h3 {
+  color: #ffb300;
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 179, 0, 0.3);
+  font-size: 1.8rem;
+}
+
+.shill-text-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.shill-text-box p {
+  color: #000000;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.shill-actions {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+/* Button styles */
+.copy-button, .twitter-button, .sigma-button, .dexscreener-button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Chewy', cursive;
+  border: none;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.copy-button {
+  background-color: #ffb300;
+  color: #000000;
+}
+
+.twitter-button {
+  background-color: #1DA1F2;
+  color: white;
+}
+
+.sigma-button {
+  background-color: #6441a5;
+  color: white;
+}
+
+.dexscreener-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.copy-button:hover, .twitter-button:hover, .sigma-button:hover, .dexscreener-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Connection info */
+.connection-info {
+  margin-top: 20px;
+  color: #ffb300;
+  position: relative;
+  z-index: 1;
+}
+
+/* FIXED Floating banana elements styles */
+.floating-background-element {
+  position: fixed;
+  pointer-events: none;
+  z-index: -1; /* Negative z-index ensures bananas are behind all content */
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+}
+
+/* Non-zooming bananas just fade in and out with small movements */
+.floating-background-element.no-zoom {
+  animation-name: float-and-fade;
+}
+
+/* Zooming bananas grow and shrink while moving and fading */
+.floating-background-element.zoom {
+  animation-name: float-zoom-fade;
+}
+
+@keyframes float-and-fade {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(10px, 10px) rotate(5deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float-zoom-fade {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(20px, -20px) rotate(10deg) scale(1.3);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .token-data-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .token-data-row .form-group {
+    width: 100%;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="number"] {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  
+  .deploy-button,
+  .execute-button {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+  
+  .modal-content {
+    padding: 15px;
+    width: 95%;
+  }
+  
+  .modal-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .shill-actions {
+    flex-direction: column;
+  }
+  
+  .copy-button, 
+  .twitter-button,
+  .sigma-button,
+  .dexscreener-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fee-results p {
+    font-size: 0.9rem;
+  }
+  
+  .token-amount {
+    padding: 6px 0;
+    font-size: 0.9rem;
+  }
+}
+/* Modal.css - Styling for Fee Collection modal */
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #121212;
+  border-radius: 8px;
+  border: 2px solid #ffb300;
+  max-width: 700px;
+  width: 90%;
+  padding: 20px;
+  color: #ffb300;
+  font-family: 'Bangers', cursive;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(255, 179, 0, 0.3);
+}
+
+/* Modal title */
+.modal-content h3 {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #ffb300;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Section titles */
+.modal-content h4 {
+  font-size: 24px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #ffb300;
+}
+
+/* Horizontal dividers */
+.modal-content:after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: rgba(255, 179, 0, 0.3);
+  margin: 15px 0;
+}
+
+/* Fee results container */
+.fee-results {
+  background-color: rgba(51, 46, 10, 0.7);
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Transaction details section */
+.tx-details {
+  color: #ffb300;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+}
+
+.tx-details p {
+  margin: 8px 0;
+  word-break: break-all;
+}
+
+/* BaseScan button */
+.explorer-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s;
+}
+
+.explorer-link:hover {
+  background-color: #45a049;
+}
+
+/* Shill section styling */
+.shill-section {
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 179, 0, 0.3);
+  padding-top: 20px;
+}
+
+.shill-text-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Action buttons container */
+.shill-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Copy text button */
+.copy-button {
+  padding: 10px 15px;
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.copy-button:hover {
+  background-color: #3367d6;
+}
+
+/* Twitter button */
+.twitter-button {
+  padding: 10px 15px;
+  background-color: #1DA1F2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s;
+}
+
+.twitter-button:hover {
+  background-color: #0c85d0;
+}
+
+/* Close button */
+.close-modal-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: #ffb300;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.close-modal-button:hover {
+  background-color: #444;
+}
+
+/* Status colors */
+.status-confirmed {
+  color: #4CAF50;
+}
+
+.status-pending {
+  color: #FFC107;
+}
+
+.status-failed {
+  color: #f44336;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .modal-content h3 {
+    font-size: 26px;
+  }
+  
+  .modal-content h4 {
+    font-size: 20px;
+  }
+  
+  .tx-details {
+    font-size: 14px;
+  }
+  
+  .shill-actions {
+    flex-direction: column;
+  }
+  
+  .copy-button, .twitter-button {
+    width: 100%;
+  }
+}
+
+.image-upload-section {
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.upload-instructions {
+  margin-bottom: 20px;
+}
+
+.upload-instructions ol {
+  margin: 10px 0;
+}
+
+.upload-instructions li {
+  margin: 5px 0;
+}
+
+.upload-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+}
+
+.upload-label {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #ffb300;
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-label:hover {
+  background: #e6a200;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.selected-file {
+  font-size: 0.9rem;
+}
+
+.url-upload input {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 179, 0, 0.3);
+  border-radius: 4px;
+  color: #fff;
+}
+
+.url-upload input:focus {
+  outline: none;
+  border-color: #ffb300;
+}
+
+.upload-progress {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-progress progress {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.upload-progress progress::-webkit-progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.upload-progress progress::-webkit-progress-value {
+  background: #ffb300;
+  border-radius: 3px;
+}
+
+.image-preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 179, 0, 0.3);
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  padding: 8px;
+  background: rgba(255, 68, 68, 0.1);
+  border-radius: 4px;
+}
+
+.update-token-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #fff;
+}
+
+.update-token-content {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.update-token-content h2 {
+  color: #ffb800;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.wallet-section {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.connect-wallet-button {
+  background: #ffb800;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.connect-wallet-button:hover {
+  background: #ffa000;
+  transform: translateY(-1px);
+}
+
+.connect-wallet-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+.wallet-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.disconnect-button {
+  background: #ff4444;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.disconnect-button:hover {
+  background: #ff0000;
+}
+
+.token-update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-group h4 {
+  color: #ffb800;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ffb800;
+}
+
+.form-group input:disabled {
+  background: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.token-info-display {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.token-info-display p {
+  margin: 5px 0;
+  color: #fff;
+}
+
+.upload-instructions {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.upload-instructions ol {
+  margin: 10px 0 10px 20px;
+}
+
+.upload-instructions li {
+  margin: 5px 0;
+}
+
+.image-preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 184, 0, 0.3);
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff4444;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.submit-button {
+  background: #ffb800;
+  color: #000;
+  border: none;
+  padding: 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background: #ffa000;
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.transaction-status {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.success-message {
+  color: #00ff88;
+  margin-top: 10px;
+}
+

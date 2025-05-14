@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: frontend
+    env: node
+    region: oregon
+    
+    buildCommand: |
+      npm install --legacy-peer-deps
+      npm run build
+    
+    startCommand: npm run serve
+    
+    envVars:
+      - key: NODE_VERSION
+        value: 22.14.0
+      - key: NPM_CONFIG_LEGACY_PEER_DEPS
+        value: true
+
+    healthCheckPath: /
+    
+    scaling:
+      minInstances: 1
+      maxInstances: 3
+      targetCPUPercentage: 75
+
+previewsEnabled: true
+pullRequestPreviewsEnabled: true
